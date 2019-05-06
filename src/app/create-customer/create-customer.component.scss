@@ -1,0 +1,15 @@
+.component-header {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 25px;
+}
+
+.example-container {
+    text-align: center;
+    // display: flex;
+    // flex-direction: column;
+}
+
+.example-container > * {
+    width: 100%;
+  }
