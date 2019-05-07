@@ -1,15 +1,23 @@
 .component-header {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    padding-bottom: 25px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 25px;
 }
 
-.example-container {
-    text-align: center;
-    // display: flex;
-    // flex-direction: column;
+.register-container {
+  display: flex;
+  justify-content: center;
 }
 
-.example-container > * {
-    width: 100%;
-  }
+.example-form {
+  max-width: 400px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.create-btn {
+    text-align: center;
+    padding-top: 25px;
+}
