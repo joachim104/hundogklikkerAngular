@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Customer } from '../entities/class';
+import { Customer } from '../entities/customer';
 import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
@@ -31,9 +31,8 @@ export class CreateCustomerComponent implements OnInit {
     });
   }
 
-
   onSubmit() {
-    let customer = this.registerCustomerForm.value as Customer;
+    // let customer = this.registerCustomerForm.value as Customer;
 
     this.customerService.createCustomer(this.registerCustomerForm.value).subscribe(res => {
       console.log(res);

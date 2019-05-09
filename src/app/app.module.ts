@@ -9,12 +9,18 @@ import { CreateCustomerComponent } from './create-customer/create-customer.compo
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { CreateClassComponent } from './create-class/create-class.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateCustomerComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    ContactComponent,
+    CreateClassComponent
   ],
   imports: [
     BrowserModule,

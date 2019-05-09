@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span class="menu-header">HUND & KLIKKER</span>
+    <span class="menu-header" routerLink="home">HUND & KLIKKER</span>
     <button class="menu-item" mat-button [matMenuTriggerFor]="menu">OM HUND & KLIKKER</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>PRAKTISKE FORHOLD</button>
@@ -9,10 +9,11 @@
     <button class="menu-item" mat-button>HOLD & KURSER</button>
     <button class="menu-item" mat-button>ENETIMER</button>
     <button class="menu-item" mat-button>BLOG</button>
-    <button class="menu-item" mat-button>KONTAKT</button>
+    <button class="menu-item" routerLink="contact" mat-button>KONTAKT</button>
     <span class="example-spacer"></span>
     <button class="menu-item" mat-button routerLink="login">LOGIN</button>
     <button class="menu-item" mat-button routerLink="create-customer">OPRET BRUGER</button>
+    <button class="menu-item" mat-button routerLink="create-class">OPRET HOLD</button>
   </mat-toolbar-row>
 </mat-toolbar>
 

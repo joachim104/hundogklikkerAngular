@@ -1,7 +1,7 @@
-export class Customer {
+export class Class {
     id: number;
     day: string;
     time: string;
-    start_date: Date;
-    end_date: Date;
+    startDate: Date;
+    endDate: Date;
 }

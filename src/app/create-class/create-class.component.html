@@ -1,0 +1,49 @@
+<h2 class="component-header">OPRET HOLD</h2>
+
+<form novalidate [formGroup]="registerClassForm" (submit)="onSubmit(registerClassForm)">
+
+  <div class="register-container">
+    <div class="example-form">
+
+      <mat-form-field class="example-full-width">
+        <input matInput [matDatepicker]="pickerOne" placeholder="Kursus start dato" id="startDate"
+          formControlName="startDate" required>
+        <mat-datepicker-toggle matSuffix [for]="pickerOne"></mat-datepicker-toggle>
+        <mat-datepicker #pickerOne></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [matDatepicker]="pickerTwo" placeholder="Kursus slut dato" id="endDate"
+          formControlName="endDate" required>
+        <mat-datepicker-toggle matSuffix [for]="pickerTwo"></mat-datepicker-toggle>
+        <mat-datepicker #pickerTwo></mat-datepicker>
+      </mat-form-field>
+
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Vælg dag</mat-label>
+        <mat-select [formControl]="dayControl" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let day of days" [value]="day" id="day">
+            {{day.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="dayControl.hasError('required')">Please choose an day</mat-error>
+      </mat-form-field>
+
+  
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Tid" id="time" formControlName="time" required>
+      </mat-form-field>
+
+    </div>
+  </div>
+
+  <div class="create-btn">
+    <button mat-raised-button type="submit" id="createClass">Opret</button>
+  </div>
+
+  <!-- <mat-divider class="divider"></mat-divider> -->
+
+
+</form>
