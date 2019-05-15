@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreateClassComponent } from './create-class/create-class.component';
+import { ClassListComponent } from './class-list/class-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CreateClassComponent } from './create-class/create-class.component';
     LoginComponent,
     HomeComponent,
     ContactComponent,
-    CreateClassComponent
+    CreateClassComponent,
+    ClassListComponent
   ],
   imports: [
     BrowserModule,

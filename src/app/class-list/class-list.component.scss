@@ -1,0 +1,18 @@
+table {
+    width: 65%;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 35px;
+}
+
+.table-header {
+    text-align: center;
+}
+
+.rows {
+    cursor: pointer;
+}

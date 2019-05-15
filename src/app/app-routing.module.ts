@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreateClassComponent } from './create-class/create-class.component';
+import { ClassListComponent } from './class-list/class-list.component';
+
 import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -13,6 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'create-class', component: CreateClassComponent },
+  { path: 'class-list', component: ClassListComponent }
 ];
 
 @NgModule({
