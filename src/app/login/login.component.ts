@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../auth.service";
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Customer } from '../entities/customer';
 
 @Component({
   selector: 'app-login',
@@ -8,19 +11,29 @@ import { AuthService } from "../auth.service";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  loginForm: any;
+
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
+    this.loginForm = this.fb.group({
+      email: [''],
+      password: ['']
+    });
   }
 
-  // loginUser(event) {
-  //   const target = event.target;
-  //   const username = target.querySelector('#username').value;
-  //   const password = target.querySelector('#password').value;
+  onLogin() {
 
-  //   console.log(username, password);
+    let customer = this.loginForm.value as Customer;
+    // const target = event.target;
+    // const username = target.querySelector('#username').value;
+    // const password = target.querySelector('#password').value;
 
-  //     this.authService.getUserDetails(username, password)
-  // }
+    // console.log(username, password);
+
+    //   this.authService.getUserDetails(username, password)
+
+      this.authService.login(customer);
+  }
 
 }

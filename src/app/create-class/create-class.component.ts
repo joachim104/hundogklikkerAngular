@@ -16,9 +16,12 @@ export class CreateClassComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private classService: ClassService, private router: Router) { }
 
-  ngOnInit() {
+  selectedDay: string;
+  selectedSubject: string;
 
+  ngOnInit() {
     this.registerClassForm = this.fb.group({
+      subject: [''],
       day: [''],
       time: [''],
       startDate: [''],
@@ -27,22 +30,29 @@ export class CreateClassComponent implements OnInit {
   }
 
   dayControl = new FormControl('', [Validators.required]);
+  subjectControl = new FormControl('', [Validators.required]);
 
   days: any[] = [
     { name: 'Mandag'},
     { name: 'Tirsdag'},
     { name: 'Onsdag'},
     { name: 'Torsdag'},
-    { name: 'Fredag'},
-    { name: 'Lørdag'},
-    { name: 'Søndag'}
+    { name: 'Fredag'}
   ];
 
+  
+  subjects: any[] = [
+    { name: 'Lydighed'},
+    { name: 'Hvalpehold'},
+    { name: 'Rally'},
+    { name: 'Nosework'}
+  ];
+  
+  // days = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag']
 
   onSubmit() {
-    // let customer = this.registerCustomerForm.value as Customer;
-
-    console.log(this.registerClassForm.value);
+    console.log("FORM: ", this.registerClassForm.value);
+    // console.log(this.selectedDay);
 
     this.classService.createClass(this.registerClassForm.value).subscribe(res => {
       console.log(res);

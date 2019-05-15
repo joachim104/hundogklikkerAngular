@@ -6,6 +6,17 @@
     <div class="example-form">
 
       <mat-form-field class="example-full-width">
+        <mat-label>Vælg aktivitet</mat-label>
+        <mat-select [(ngModel)]="selectedSubject" name="subject" formControlName="subject" required>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let subject of subjects" id="subject" [value]="subject.name">
+            {{subject.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="dayControl.hasError('required')">Vælg en aktivitet</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
         <input matInput [matDatepicker]="pickerOne" placeholder="Kursus start dato" id="startDate"
           formControlName="startDate" required>
         <mat-datepicker-toggle matSuffix [for]="pickerOne"></mat-datepicker-toggle>
@@ -19,19 +30,19 @@
         <mat-datepicker #pickerTwo></mat-datepicker>
       </mat-form-field>
 
-    
+
       <mat-form-field class="example-full-width">
         <mat-label>Vælg dag</mat-label>
-        <mat-select [formControl]="dayControl" required>
+        <mat-select [(ngModel)]="selectedDay" name="day" formControlName="day" required>
           <mat-option>--</mat-option>
-          <mat-option *ngFor="let day of days" [value]="day" id="day">
+          <mat-option *ngFor="let day of days" id="day" [value]="day.name">
             {{day.name}}
           </mat-option>
         </mat-select>
-        <mat-error *ngIf="dayControl.hasError('required')">Please choose an day</mat-error>
+        <mat-error *ngIf="dayControl.hasError('required')">Vælg en dag</mat-error>
       </mat-form-field>
 
-  
+
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Tid" id="time" formControlName="time" required>
       </mat-form-field>
@@ -42,8 +53,5 @@
   <div class="create-btn">
     <button mat-raised-button type="submit" id="createClass">Opret</button>
   </div>
-
-  <!-- <mat-divider class="divider"></mat-divider> -->
-
 
 </form>

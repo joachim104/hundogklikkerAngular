@@ -1,5 +1,24 @@
-<form (submit)="loginUser($event)">
+<!-- <form (submit)="loginUser($event)">
   <input type="text" placeholder="Username" id="username">
   <input type="password" placeholder="Password" id="password">
   <input type="submit" value="Submit">
+</form> -->
+
+<form novalidate [formGroup]="loginForm" (submit)="onLogin(loginForm)">
+
+  <div class="login-container">
+    <div class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" id="email" formControlName="email" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" id="password" type="password" formControlName="password" required>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="create-btn">
+    <button mat-raised-button type="submit" id="loginUser">Opret</button>
+  </div>
+
 </form>
