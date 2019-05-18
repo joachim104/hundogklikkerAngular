@@ -12,8 +12,14 @@ export class ClassService {
 
   private baseURL: string = environment.apiUrl;
 
-  createClass(class1: Class ){
-    return this.http.post(environment.apiUrl + "/dogclasses", class1, {responseType: 'text'});
+  createClass(class1: Class) {
+    return this.http.post(environment.apiUrl + "/dogclasses", class1, { responseType: 'text' });
   }
+
+  getAllClasses() {
+    return this.http.get<Class>(environment.apiUrl + "/dogclasses");
+  }
+
+
 
 }

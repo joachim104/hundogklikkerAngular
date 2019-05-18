@@ -1,0 +1,35 @@
+
+<div class="spinner-container">
+  <mat-spinner *ngIf="loading"></mat-spinner>
+</div>
+
+<div class="card-container">
+  <div *ngFor="let class of classes">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ class.subject }}</mat-card-title>
+        <mat-card-subtitle> {{ class.day }}s hold</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://www.dkk.dk/uploads/hero/_800x500_crop_center-center_75/Lydighed.jpg"
+        alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <div class="list-container">
+          <mat-list role="list">
+            <mat-list-item role="listitem">Hver {{ class.day}}</mat-list-item>
+            <mat-list-item role="listitem">kl. {{ class.time}}</mat-list-item>
+            <mat-list-item role="listitem">Start dato: {{ class.startDate }}</mat-list-item>
+            <mat-list-item role="listitem">Slut dato: {{ class.endDate }}</mat-list-item>
+            <mat-list-item role="listitem">{{ class.participants }}/6 deltagere</mat-list-item>
+          </mat-list>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button class="btn" *ngIf="checkLogin() == true" (click)="onEditClick()">REDIGER HOLD</button>
+        <button mat-raised-button class="btn" *ngIf="checkLogin() == true" (click)="onDeleteClick()">LUK HOLD</button>
+        <button mat-raised-button class="apply-btn" (click)="onApplyClick()">TILMELD HOLD</button>
+        <button mat-raised-button class="cancel-btn" (click)="onCancelClick()">FRAMELD HOLD</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

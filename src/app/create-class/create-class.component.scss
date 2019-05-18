@@ -1,24 +1,38 @@
-.component-header {
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-    padding-bottom: 25px;
-  }
-  
-  .register-container {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .example-form {
-    max-width: 400px;
-  }
-  
-  .example-full-width {
-    margin-top: 35px;
-    width: 100%;
-  }
-  
-  .create-btn {
-      text-align: center;
-      padding-top: 25px;
-  }
+.mat-form-field {
+  margin: 4px !important;
+}
+
+#createCustomer {
+  background-color: black;
+  color: white;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+}
+
+.example-card {
+  max-width: 400px;
+  padding: 4%;
+  margin-top: 5%;
+  -webkit-box-shadow: 1px 1px 1px 30px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 1px 30px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 1px 30px rgba(0, 0, 0, 0.75);
+}
+
+.mat-fab.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary {
+  background-color: black;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}

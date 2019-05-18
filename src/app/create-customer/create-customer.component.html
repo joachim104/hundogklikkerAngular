@@ -1,38 +1,41 @@
-<h2 class="component-header">OPRET BRUGER</h2>
+<div class="register-container">
+  <mat-card class="example-card">
+    <mat-card-content>
+        <mat-card-title>Registrer</mat-card-title>
+      <form novalidate [formGroup]="registerCustomerForm" (submit)="onSubmit(registerCustomerForm)">
+        <div class="register-container">
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Fornavn" id="firstname" formControlName="firstName" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Efternavn" id="lastname" formControlName="lastName" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Adresse" id="address" formControlName="address" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" id="email" formControlName="email" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" id="password" type="password" formControlName="password" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Hunds navn" id="dog_name" formControlName="dogName" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Hunds Alder" id="dog_age" formControlName="dogAge" required>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Hunds Race" id="dog_race" formControlName="dogRace" required>
+            </mat-form-field>
+          </div>
+        </div>
 
-<form novalidate [formGroup]="registerCustomerForm" (submit)="onSubmit(registerCustomerForm)">
-
-  <div class="register-container">
-    <div class="example-form">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Fornavn" id="firstname" formControlName="firstName" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Efternavn" id="lastname" formControlName="lastName" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Adresse" id="address" formControlName="address" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Email" id="email" formControlName="email" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Password" id="password" type="password" formControlName="password" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Hunds navn" id="dog_name" formControlName="dogName" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Hunds Alder" id="dog_age" formControlName="dogAge" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Hunds Race" id="dog_race" formControlName="dogRace" required>
-      </mat-form-field>
-    </div>
-  </div>
-
-  <div class="create-btn">
-    <button mat-raised-button type="submit" id="createCustomer">Opret</button>
-  </div>
-
-</form>
+        <div class="create-btn">
+          <button mat-raised-button type="submit" id="createCustomer">Registrer</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,32 @@
+.example-card {
+  max-width: 400px;
+  margin: 50px;
+  background-color: #f4f4f4;
+  margin-bottom: 25px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.example-header-image {
+  background-image: url("https://bilkadk.imgix.net/medias/sys_master/root/hf4/h8b/9630709874718/hund-vaerd-at-vide-sundhed-og-sygdomstegn-01-z.jpg");
+  background-size: cover;
+}
+
+.mat-card > .mat-card-actions:last-child {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}

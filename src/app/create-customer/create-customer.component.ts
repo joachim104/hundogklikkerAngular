@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Customer } from '../entities/customer';
 import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-create-customer',
@@ -14,7 +15,8 @@ export class CreateCustomerComponent implements OnInit {
 
   registerCustomerForm: any;
 
-  constructor(private fb: FormBuilder, private customerService: CustomerService, private router: Router) { }
+  constructor(private fb: FormBuilder, private customerService: CustomerService, private router: Router, public dialog: MatDialog) { }
+
 
   ngOnInit() {
 
@@ -36,6 +38,7 @@ export class CreateCustomerComponent implements OnInit {
 
     this.customerService.createCustomer(this.registerCustomerForm.value).subscribe(res => {
       console.log(res);
+      this.router.navigate(['/login']);
     });
   }
 }

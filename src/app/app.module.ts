@@ -13,6 +13,13 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreateClassComponent } from './create-class/create-class.component';
 import { ClassListComponent } from './class-list/class-list.component';
+import { ClassCardComponent } from './class-card/class-card.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { SingleClassComponent } from './single-class/single-class.component';
+import { TermsComponent } from './terms/terms.component';
+import { PracticalComponent } from './practical/practical.component';
+import { HeaderComponent } from './header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +29,12 @@ import { ClassListComponent } from './class-list/class-list.component';
     HomeComponent,
     ContactComponent,
     CreateClassComponent,
-    ClassListComponent
+    ClassListComponent,
+    ClassCardComponent,
+    SingleClassComponent,
+    TermsComponent,
+    PracticalComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +45,8 @@ import { ClassListComponent } from './class-list/class-list.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

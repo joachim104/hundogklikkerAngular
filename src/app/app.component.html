@@ -1,20 +1,31 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span class="menu-header" routerLink="home">HUND & KLIKKER</span>
-    <button class="menu-item" mat-button [matMenuTriggerFor]="menu">OM HUND & KLIKKER</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>PRAKTISKE FORHOLD</button>
-      <button mat-menu-item>HANDELSBETINGELSER</button>
-    </mat-menu>
-    <button class="menu-item" mat-button routerLink="class-list">HOLD & KURSER</button>
-    <button class="menu-item" mat-button>ENETIMER</button>
-    <button class="menu-item" mat-button>BLOG</button>
-    <button class="menu-item" routerLink="contact" mat-button>KONTAKT</button>
-    <span class="example-spacer"></span>
-    <button class="menu-item" mat-button routerLink="login">LOGIN</button>
-    <button class="menu-item" mat-button routerLink="create-customer">OPRET BRUGER</button>
-    <button class="menu-item" mat-button routerLink="create-class">OPRET HOLD</button>
-  </mat-toolbar-row>
-</mat-toolbar>
+<nav mat-tab-nav-bar>
+
+  <a mat-tab-link routerLink="" routerLinkActive [routerLinkActiveOptions]="{exact: true}" #rla1="routerLinkActive"
+    [active]="rla1.isActive">Hund & Klikker</a>
+
+  <a mat-tab-link routerLink="class-card" routerLinkActive [routerLinkActiveOptions]="{exact: true}"
+    #rla2="routerLinkActive" [active]="rla2.isActive">Hold & Kurser</a>
+
+  <a mat-tab-link routerLink="single-class" routerLinkActive [routerLinkActiveOptions]="{exact: true}"
+    #rla3="routerLinkActive" [active]="rla3.isActive">Enetimer</a>
+
+  <a mat-tab-link routerLink="practical" routerLinkActive [routerLinkActiveOptions]="{exact: true}"
+    #rla4="routerLinkActive" [active]="rla4.isActive">Praktiske forhold</a>
+
+  <a mat-tab-link routerLink="terms" routerLinkActive [routerLinkActiveOptions]="{exact: true}" #rla5="routerLinkActive"
+    [active]="rla5.isActive">Betingelser</a>
+
+  <a mat-tab-link routerLink="create-class" *ngIf="checkLogin() == true" routerLinkActive
+    [routerLinkActiveOptions]="{exact: true}" #rla6="routerLinkActive" [active]="rla6.isActive">Opret Hold</a>
+
+  <a mat-tab-link routerLink="login" *ngIf="checkLogin() == false" routerLinkActive
+    [routerLinkActiveOptions]="{exact: true}" #rla7="routerLinkActive" [active]="rla7.isActive">Login</a>
+
+  <a mat-tab-link routerLink="create-customer" *ngIf="checkLogin() == false" routerLinkActive
+    [routerLinkActiveOptions]="{exact: true}" #rla8="routerLinkActive" [active]="rla8.isActive">Registrer</a>
+
+  <a mat-tab-link *ngIf="checkLogin() == true" routerLinkActive [routerLinkActiveOptions]="{exact: true}"
+    #rla9="routerLinkActive" [active]="rla9.isActive">Log ud</a>
+</nav>
 
 <router-outlet></router-outlet>

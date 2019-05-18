@@ -1,57 +1,54 @@
-<h2 class="component-header">OPRET HOLD</h2>
+<div class="register-container">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Opret hold</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form novalidate novalidate [formGroup]="registerClassForm" (submit)="onSubmit(registerClassForm)">
+        <div class="register-container">
+          <div class="example-form">
 
-<form novalidate [formGroup]="registerClassForm" (submit)="onSubmit(registerClassForm)">
-
-  <div class="register-container">
-    <div class="example-form">
-
-      <mat-form-field class="example-full-width">
-        <mat-label>Vælg aktivitet</mat-label>
-        <mat-select [(ngModel)]="selectedSubject" name="subject" formControlName="subject" required>
-          <mat-option>--</mat-option>
-          <mat-option *ngFor="let subject of subjects" id="subject" [value]="subject.name">
-            {{subject.name}}
-          </mat-option>
-        </mat-select>
-        <mat-error *ngIf="dayControl.hasError('required')">Vælg en aktivitet</mat-error>
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width">
-        <input matInput [matDatepicker]="pickerOne" placeholder="Kursus start dato" id="startDate"
-          formControlName="startDate" required>
-        <mat-datepicker-toggle matSuffix [for]="pickerOne"></mat-datepicker-toggle>
-        <mat-datepicker #pickerOne></mat-datepicker>
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width">
-        <input matInput [matDatepicker]="pickerTwo" placeholder="Kursus slut dato" id="endDate"
-          formControlName="endDate" required>
-        <mat-datepicker-toggle matSuffix [for]="pickerTwo"></mat-datepicker-toggle>
-        <mat-datepicker #pickerTwo></mat-datepicker>
-      </mat-form-field>
-
-
-      <mat-form-field class="example-full-width">
-        <mat-label>Vælg dag</mat-label>
-        <mat-select [(ngModel)]="selectedDay" name="day" formControlName="day" required>
-          <mat-option>--</mat-option>
-          <mat-option *ngFor="let day of days" id="day" [value]="day.name">
-            {{day.name}}
-          </mat-option>
-        </mat-select>
-        <mat-error *ngIf="dayControl.hasError('required')">Vælg en dag</mat-error>
-      </mat-form-field>
-
-
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Tid" id="time" formControlName="time" required>
-      </mat-form-field>
-
-    </div>
-  </div>
-
-  <div class="create-btn">
-    <button mat-raised-button type="submit" id="createClass">Opret</button>
-  </div>
-
-</form>
+            <mat-form-field class="example-full-width">
+              <mat-label>Vælg aktivitet</mat-label>
+              <mat-select [(ngModel)]="selectedSubject" name="subject" formControlName="subject" required>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let subject of subjects" id="subject" [value]="subject.name">
+                  {{subject.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="dayControl.hasError('required')">Vælg en aktivitet</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="pickerOne" placeholder="Kursus start dato" id="startDate"
+                formControlName="startDate" required>
+              <mat-datepicker-toggle matSuffix [for]="pickerOne"></mat-datepicker-toggle>
+              <mat-datepicker #pickerOne></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="pickerTwo" placeholder="Kursus slut dato" id="endDate"
+                formControlName="endDate" required>
+              <mat-datepicker-toggle matSuffix [for]="pickerTwo"></mat-datepicker-toggle>
+              <mat-datepicker #pickerTwo></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Vælg dag</mat-label>
+              <mat-select [(ngModel)]="selectedDay" name="day" formControlName="day" required>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let day of days" id="day" [value]="day.name">
+                  {{day.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="dayControl.hasError('required')">Vælg en dag</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Tid" id="time" formControlName="time" required>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="create-btn">
+          <button mat-raised-button type="submit" id="createCustomer">Opret</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
