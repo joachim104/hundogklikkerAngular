@@ -16,7 +16,7 @@
     [active]="rla5.isActive">Betingelser</a>
 
   <a mat-tab-link routerLink="create-class" *ngIf="checkLogin() == true" routerLinkActive
-    [routerLinkActiveOptions]="{exact: true}" #rla6="routerLinkActive" [active]="rla6.isActive">Opret Hold</a>
+    [routerLinkActiveOptions]="{exact: true}" #rla6="routerLinkActive" [active]="rla6.isActive">Opret hold</a>
 
   <a mat-tab-link routerLink="login" *ngIf="checkLogin() == false" routerLinkActive
     [routerLinkActiveOptions]="{exact: true}" #rla7="routerLinkActive" [active]="rla7.isActive">Login</a>
@@ -24,7 +24,7 @@
   <a mat-tab-link routerLink="create-customer" *ngIf="checkLogin() == false" routerLinkActive
     [routerLinkActiveOptions]="{exact: true}" #rla8="routerLinkActive" [active]="rla8.isActive">Registrer</a>
 
-  <a mat-tab-link *ngIf="checkLogin() == true" routerLinkActive [routerLinkActiveOptions]="{exact: true}"
+  <a mat-tab-link *ngIf="checkLogin() == true" (click)="logout()" routerLinkActive [routerLinkActiveOptions]="{exact: true}"
     #rla9="routerLinkActive" [active]="rla9.isActive">Log ud</a>
 </nav>
 

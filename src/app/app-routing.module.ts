@@ -5,7 +5,6 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreateClassComponent } from './create-class/create-class.component';
-import { ClassListComponent } from './class-list/class-list.component';
 import { ClassCardComponent } from './class-card/class-card.component';
 import { SingleClassComponent } from './single-class/single-class.component';
 import { TermsComponent } from './terms/terms.component';
@@ -25,7 +24,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'single-class', component: SingleClassComponent },
-  { path: 'class-list', component: ClassListComponent },
   { path: 'class-card', component: ClassCardComponent },
   { path: 'terms', component: TermsComponent },
   { path: 'practical', component: PracticalComponent },

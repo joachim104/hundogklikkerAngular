@@ -12,13 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreateClassComponent } from './create-class/create-class.component';
-import { ClassListComponent } from './class-list/class-list.component';
 import { ClassCardComponent } from './class-card/class-card.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { SingleClassComponent } from './single-class/single-class.component';
 import { TermsComponent } from './terms/terms.component';
 import { PracticalComponent } from './practical/practical.component';
-import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -29,12 +27,10 @@ import { HeaderComponent } from './header/header.component';
     HomeComponent,
     ContactComponent,
     CreateClassComponent,
-    ClassListComponent,
     ClassCardComponent,
     SingleClassComponent,
     TermsComponent,
-    PracticalComponent,
-    HeaderComponent
+    PracticalComponent
   ],
   imports: [
     BrowserModule,

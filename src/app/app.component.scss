@@ -1,23 +1,28 @@
-.example-icon {
-  padding: 0 14px;
-}
-  
-.example-spacer {
-  flex: 1 1 auto;
+body {
+  background-color: #659DBD;
 }
 
-.menu-header {
-  font-family: 'Montserrat', sans-serif;
+.mat-tab-nav-bar {
+  background-color: #659DBD;
 }
 
-.menu-item {
-  font-family: 'Montserrat', sans-serif;
+.mat-ink-bar {
+  background-color: black !important;
 }
 
-.mat-button-wrapper span:hover {
-  border-bottom: solid 2px white !important;
+.mat-tab-link {
+  // color:yellow !important;
 }
 
-.mat-toolbar-row {
-  background-color: black;
+* {
+  font-family: 'Lato', sans-serif !important;
 }
+
+
+// #8D8741 mørkegrøn
+// #659DBD blå
+// #DAAD86 mørksand
+// #FBEEC1 lyssand
+// #bc986a jord
+
+

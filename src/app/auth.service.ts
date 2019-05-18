@@ -27,7 +27,8 @@ export class AuthService {
     return of(true).pipe(
       delay(1000),
       tap(val => {
-        this.isLoggedIn = true
+        this.isLoggedIn = true;
+        this.isAdmin = true;
       })
     );
   }
