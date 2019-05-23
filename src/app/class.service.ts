@@ -21,7 +21,7 @@ export class ClassService {
   }
 
   getCustomerClasses(customer) {
-    return this.http.get(environment.apiUrl + "/dogclassespersonal", customer);
+    return this.http.post(environment.apiUrl + "/dogclassespersonal", customer);
   }
 
   createClass(class1: Class) {
