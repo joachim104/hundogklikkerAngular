@@ -17,6 +17,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { SingleClassComponent } from './single-class/single-class.component';
 import { TermsComponent } from './terms/terms.component';
 import { PracticalComponent } from './practical/practical.component';
+import { EditClassComponent } from './edit-class/edit-class.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { PracticalComponent } from './practical/practical.component';
     ClassCardComponent,
     SingleClassComponent,
     TermsComponent,
-    PracticalComponent
+    PracticalComponent,
+    EditClassComponent
   ],
   imports: [
     BrowserModule,

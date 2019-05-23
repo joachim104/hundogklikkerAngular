@@ -9,7 +9,6 @@ export class AuthGuardService {
 
   constructor(public authService: AuthService, public router: Router) { }
 
-
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let url: string = state.url;
     return this.checkLogin(url);

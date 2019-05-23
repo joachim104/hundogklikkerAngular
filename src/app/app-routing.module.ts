@@ -9,14 +9,13 @@ import { ClassCardComponent } from './class-card/class-card.component';
 import { SingleClassComponent } from './single-class/single-class.component';
 import { TermsComponent } from './terms/terms.component';
 import { PracticalComponent } from './practical/practical.component';
-
-
+import { EditClassComponent } from './edit-class/edit-class.component';
+import { from } from 'rxjs';
 
 import {
   AuthGuardService as AuthGuard
 } from './auth-guard.service';
 
-import { from } from 'rxjs';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,6 +26,9 @@ const routes: Routes = [
   { path: 'class-card', component: ClassCardComponent },
   { path: 'terms', component: TermsComponent },
   { path: 'practical', component: PracticalComponent },
+  // { path: "edit-class", component: EditClassComponent},
+  { path: "edit-class/:id", component: EditClassComponent},
+
   {
     path: 'create-class',
     component: CreateClassComponent,
