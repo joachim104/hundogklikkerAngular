@@ -38,6 +38,7 @@ export class CustomerClassCardsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.onCancelClick(class1);
+        this.fetchData();
       }
     });
   }
@@ -47,6 +48,10 @@ export class CustomerClassCardsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.fetchData();
+  }
+
+  fetchData() {
     this.loading = true;
     this.classService.getCustomerClasses(this.authService.currentUser).subscribe(response => {
       this.classes = response;
