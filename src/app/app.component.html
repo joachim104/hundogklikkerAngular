@@ -15,7 +15,7 @@
   <a mat-tab-link routerLink="terms" routerLinkActive [routerLinkActiveOptions]="{exact: true}" #rla5="routerLinkActive"
     [active]="rla5.isActive">Betingelser</a>
 
-  <a mat-tab-link routerLink="create-class" *ngIf="checkLogin() == true" routerLinkActive
+  <a mat-tab-link routerLink="create-class" *ngIf="checkLogin() == true && checkAdmin() == true" routerLinkActive
     [routerLinkActiveOptions]="{exact: true}" #rla6="routerLinkActive" [active]="rla6.isActive">Opret hold</a>
 
   <a mat-tab-link routerLink="login" *ngIf="checkLogin() == false" routerLinkActive

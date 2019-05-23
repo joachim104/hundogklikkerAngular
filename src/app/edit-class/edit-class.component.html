@@ -8,7 +8,7 @@
         <div class="edit-container">
           <div class="example-form">
 
-            <!-- <mat-form-field class="example-full-width">
+            <mat-form-field class="example-full-width">
               <mat-label>Vælg aktivitet</mat-label>
               <mat-select name="subject" formControlName="subject" required>
                 <mat-option>--</mat-option>
@@ -16,8 +16,8 @@
                   {{subject.name}}
                 </mat-option>
               </mat-select>
-              <mat-error *ngIf="dayControl.hasError('required')">Vælg en aktivitet</mat-error>
-            </mat-form-field> -->
+              <!-- <mat-error *ngIf="dayControl.hasError('required')">Vælg en aktivitet</mat-error> -->
+            </mat-form-field>
 
             <mat-form-field class="example-full-width">
               <input matInput [matDatepicker]="pickerOne" placeholder="Kursus start dato" id="startDate"
@@ -25,6 +25,7 @@
               <mat-datepicker-toggle matSuffix [for]="pickerOne"></mat-datepicker-toggle>
               <mat-datepicker #pickerOne></mat-datepicker>
             </mat-form-field>
+
 
             <mat-form-field class="example-full-width">
               <input matInput [matDatepicker]="pickerTwo" placeholder="Kursus slut dato" id="endDate"
@@ -57,43 +58,3 @@
     </mat-card-content>
   </mat-card>
 </div>
-
-
-<!-- <div class="container">
-
-  <form novalidate [formGroup]="editSitterForm" (submit)="onSubmit(editSitterForm)">
-    <div class="inputFieldsDiv">
-      <h3>Edit Babysitter</h3>
-      <hr>
-      <br>
-      <div class="example-form">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Username" id="username" formControlName="username" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input type="password" matInput placeholder="Password" id="password" formControlName="password" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Firstname" id="firstname" formControlName="firstname" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Lastname" id="lastname" formControlName="lastname" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Age" id="age" formControlName="age" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Gender" id="gender" formControlName="gender" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="City" id="city" formControlName="city" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Hourly Wage" id="hourly-wage" formControlName="hourlyWage" required>
-        </mat-form-field>
-      </div>
-      <br>
-      <button mat-raised-button color="primary" type="submit" (click)="onSubmit()" id="editSitter">Edit Sitter</button>
-    </div>
-  </form>
-</div> -->

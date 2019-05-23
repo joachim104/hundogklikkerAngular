@@ -41,6 +41,7 @@ export class EditClassComponent implements OnInit {
     this.editClassForm = new FormGroup({
       day: new FormControl(),
       time: new FormControl(),
+      subject: new FormControl(),
       startDate: new FormControl(),
       endDate: new FormControl()
     });
@@ -50,22 +51,15 @@ export class EditClassComponent implements OnInit {
     let classId: String;
     classId = this.route.snapshot.paramMap.get("id");
 
-    console.log(classId);
-
     this.classService.getAllClasses().subscribe((responseFromApi: any[]) => {
-      
-      console.log("response: ", responseFromApi);
-      const myData = responseFromApi.filter(x => x.classID === classId);
-      console.log("mydata: ", myData);
+      const myData = responseFromApi.filter(x => x.classID == classId);
       this.classes = myData;
-
       var classData = this.classes[0];
-
-      console.log("class obj: ", this.classes[0]);
 
       var fields = {
         day: '',
         time: '',
+        subject: '',
         startDate: '',
         endDate: ''
       }
@@ -79,12 +73,18 @@ export class EditClassComponent implements OnInit {
     })
   }
 
-  // onSubmit() {
-  //   let sitter = this.editSitterForm.value as Sitter;
-  //   sitter._id = this.route.snapshot.paramMap.get("id");
-  //   sitter.customerId = "js";
-  //   this.sittersActions.updateSitter(sitter);
-  //   this.router.navigate(["/home"]);
-  // }
+  onSubmit() {
+    let class1 = this.editClassForm.value;
+    class1.classID = this.route.snapshot.paramMap.get("id");
+    // sitter.customerId = "js";
+    console.log(class1);
+
+    this.classService.updateClass(class1).subscribe(res => {
+      console.log(res);
+    });
+    // let sitter = this.editSitterForm.value as Sitter;
+    // this.sittersActions.updateSitter(sitter);
+    // this.router.navigate(["/home"]);
+  }
 
 }

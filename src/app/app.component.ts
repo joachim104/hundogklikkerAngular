@@ -28,6 +28,10 @@ export class AppComponent {
     return this.authService.isLoggedIn;
   };
 
+  checkAdmin(): Boolean {
+    return this.authService.isAdmin;
+  };
+
   logout() {
     this.authService.logout();
     this.router.navigate(['/']);

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Class } from '../app/entities/class';
 import { CustomerClass } from './entities/customerClass';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class ClassService {
 
   private baseURL: string = environment.apiUrl;
   customerClass: CustomerClass;
-
+  myMoment: moment.Moment = moment("");
   getAllClasses() {
     return this.http.get(environment.apiUrl + "/dogclasses");
   }
@@ -25,12 +26,22 @@ export class ClassService {
   // evt brug http.delete her!!
   deleteClass(classId: number) {
     console.log("kører deleteClass");
-    return this.http.post(environment.apiUrl + "/delete", classId, { responseType: 'text' });
+    const class1 = {
+      classID: classId,
+      customerID: 0
+    }
+    return this.http.post(environment.apiUrl + "/delete", class1, { responseType: 'text' });
   }
 
-  editClass(class1) {
+  updateClass(class1) {
     console.log(class1);
-    return this.http.put(environment.apiUrl + class1.classID, class1, {responseType: 'text'});
+    // var sd = new Date(class1.startDate);
+    // var ed = new Date(class1.endDate);
+
+    class1.startDate = moment(class1.startDate).format('DD/MM/YYYY');
+    class1.endDate = moment(class1.endDate).format('DD/MM/YYYY');
+
+    return this.http.post(environment.apiUrl + "/editdogclass", class1, { responseType: 'text' });
     // return this.http.put(environment.apiUrl + sitter._id, sitter, {responseType: 'text'});
   }
 

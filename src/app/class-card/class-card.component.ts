@@ -55,8 +55,6 @@ export class ClassCardComponent implements OnInit {
   }
 
   onEditClick(class1) {
-    console.log("kører Edit");
-    console.log(class1);
     this.classEditClicked.emit(this.class);
     this.router.navigate(["/edit-class/" + class1.classID]);
   }
