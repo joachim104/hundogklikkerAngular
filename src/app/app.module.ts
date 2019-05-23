@@ -18,6 +18,7 @@ import { SingleClassComponent } from './single-class/single-class.component';
 import { TermsComponent } from './terms/terms.component';
 import { PracticalComponent } from './practical/practical.component';
 import { EditClassComponent } from './edit-class/edit-class.component';
+import { CustomerClassCardsComponent } from './customer-class-cards/customer-class-cards.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { EditClassComponent } from './edit-class/edit-class.component';
     SingleClassComponent,
     TermsComponent,
     PracticalComponent,
-    EditClassComponent
+    EditClassComponent,
+    CustomerClassCardsComponent
   ],
   imports: [
     BrowserModule,

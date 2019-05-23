@@ -10,6 +10,8 @@ import { SingleClassComponent } from './single-class/single-class.component';
 import { TermsComponent } from './terms/terms.component';
 import { PracticalComponent } from './practical/practical.component';
 import { EditClassComponent } from './edit-class/edit-class.component';
+import { CustomerClassCardsComponent } from './customer-class-cards/customer-class-cards.component';
+
 import { from } from 'rxjs';
 
 import {
@@ -28,6 +30,7 @@ const routes: Routes = [
   { path: 'practical', component: PracticalComponent },
   // { path: "edit-class", component: EditClassComponent},
   { path: "edit-class/:id", component: EditClassComponent},
+  { path: "customer-class-cards", component: CustomerClassCardsComponent},
 
   {
     path: 'create-class',

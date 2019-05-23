@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Class } from '../entities/class';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClassService } from '../class.service';
+import { CustomerClass } from '../entities/customerClass';
 
 @Component({
   selector: 'app-edit-class',
@@ -39,6 +40,7 @@ export class EditClassComponent implements OnInit {
   ngOnInit() {
 
     this.editClassForm = new FormGroup({
+      classID: new FormControl(),
       day: new FormControl(),
       time: new FormControl(),
       subject: new FormControl(),
@@ -57,6 +59,7 @@ export class EditClassComponent implements OnInit {
       var classData = this.classes[0];
 
       var fields = {
+        classID: classId,
         day: '',
         time: '',
         subject: '',
@@ -74,15 +77,32 @@ export class EditClassComponent implements OnInit {
   }
 
   onSubmit() {
-    let class1 = this.editClassForm.value;
-    class1.classID = this.route.snapshot.paramMap.get("id");
+    // let class1 = this.editClassForm.value;
+    // let class1 = this.editClassForm.value as Class;
+    // let intID = parseInt(this.route.snapshot.paramMap.get("id"));
+    // class1.id = this.route.snapshot.paramMap.get("id");
+    // class1.id = intID;
+    // class1.classID = intID;
     // sitter.customerId = "js";
-    console.log(class1);
+    // console.log(class1);
 
-    this.classService.updateClass(class1).subscribe(res => {
+    console.log("object", this.editClassForm.value);
+
+    console.log(this.editClassForm.value.endDate);
+
+    
+    this.classService.createClass(this.editClassForm.value).subscribe(res => {
       console.log(res);
-    });
-    // let sitter = this.editSitterForm.value as Sitter;
+    })
+
+    // this.classService.createClass(this.registerClassForm.value).subscribe(res => {
+    //   console.log(res);
+    //   this.router.navigate(['/class-card']);
+    // });
+
+    // this.classService.updateClass(class1).subscribe(res => {
+    //   console.log(res);
+    // });
     // this.sittersActions.updateSitter(sitter);
     // this.router.navigate(["/home"]);
   }

@@ -1,0 +1,30 @@
+<div class="spinner-container">
+  <mat-spinner *ngIf="loading"></mat-spinner>
+</div>
+
+<div class="card-container">
+  <div *ngFor="let class of classes">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{ class.subject }}</mat-card-title>
+        <mat-card-subtitle> {{ class.day }}s hold</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="list-container">
+          <mat-list role="list">
+            <mat-list-item role="listitem">Hver {{ class.day}}</mat-list-item>
+            <mat-list-item role="listitem">Kl. {{ class.time}}</mat-list-item>
+            <mat-list-item role="listitem">Start dato: {{ class.startDate }}</mat-list-item>
+            <mat-list-item role="listitem">Slut dato: {{ class.endDate }}</mat-list-item>
+            <mat-list-item role="listitem">{{ class.participants }}/6 deltagere tilmeldt</mat-list-item>
+          </mat-list>
+        </div>
+      </mat-card-content>
+      <mat-card-actions id="actions-container">
+        <button mat-raised-button class="cancel-btn" *ngIf="checkLogin() == true && checkAdmin() == false"
+          (click)="onCancelClick(class)">FRAMELD
+          HOLD</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
