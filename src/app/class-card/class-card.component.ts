@@ -62,6 +62,7 @@ export class ClassCardComponent implements OnInit {
   onApplyClick(class1) {
     this.classService.applyClass(class1.classID, this.authService.currentUser.customerID).subscribe(res => {
       console.log(res);
+      this.router.navigate(['customer-class-cards']);
     });
   };
 

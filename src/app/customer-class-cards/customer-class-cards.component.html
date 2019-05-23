@@ -21,9 +21,7 @@
         </div>
       </mat-card-content>
       <mat-card-actions id="actions-container">
-        <button mat-raised-button class="cancel-btn" *ngIf="checkLogin() == true && checkAdmin() == false"
-          (click)="onCancelClick(class)">FRAMELD
-          HOLD</button>
+          <button mat-raised-button (click)="openDialog(class)">FRAMELD</button>
       </mat-card-actions>
     </mat-card>
   </div>

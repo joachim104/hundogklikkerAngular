@@ -25,8 +25,6 @@
         <button mat-raised-button class="btn" *ngIf="checkAdmin() == true" (click)="onDeleteClick(class)">LUK HOLD</button>
         <button mat-raised-button class="apply-btn" *ngIf="checkLogin() == true && checkAdmin() == false" (click)="onApplyClick(class)">TILMELD
           HOLD</button>
-        <button mat-raised-button class="cancel-btn" *ngIf="checkLogin() == true && checkAdmin() == false" (click)="onCancelClick(class)">FRAMELD
-          HOLD</button>
       </mat-card-actions>
     </mat-card>
   </div>

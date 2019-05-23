@@ -19,6 +19,7 @@ import { TermsComponent } from './terms/terms.component';
 import { PracticalComponent } from './practical/practical.component';
 import { EditClassComponent } from './edit-class/edit-class.component';
 import { CustomerClassCardsComponent } from './customer-class-cards/customer-class-cards.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
@@ -34,8 +35,10 @@ import { CustomerClassCardsComponent } from './customer-class-cards/customer-cla
     TermsComponent,
     PracticalComponent,
     EditClassComponent,
-    CustomerClassCardsComponent
+    CustomerClassCardsComponent,
+    ConfirmDialogComponent
   ],
+  entryComponents: [ConfirmDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

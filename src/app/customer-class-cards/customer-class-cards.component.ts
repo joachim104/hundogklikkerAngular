@@ -4,6 +4,8 @@ import { AuthService } from '../auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
+import { MatDialog } from '@angular/material';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 
 @Component({
@@ -17,13 +19,32 @@ export class CustomerClassCardsComponent implements OnInit {
   myMoment: moment.Moment = moment("");
   loading: boolean = true;
   customerClass: any;
+  clickedClass: any;
 
   // evt Class type her
   @Input() class: any;
 
   @Output() classEditClicked: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private classService: ClassService, private authService: AuthService, private http: HttpClient, private router: Router) { }
+  constructor(private classService: ClassService, private authService: AuthService, private http: HttpClient, private router: Router, public dialog: MatDialog) { }
+
+
+  openDialog(class1): void {
+    console.log("klasse: ", class1)
+    this.clickedClass = class1;
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '350px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.onCancelClick(class1);
+      }
+    });
+  }
+
+  getClassObject() {
+    return this.clickedClass;
+  }
 
   ngOnInit() {
     this.loading = true;
@@ -37,6 +58,8 @@ export class CustomerClassCardsComponent implements OnInit {
     });
   }
 
+
+
   checkLogin(): Boolean {
     return this.authService.isLoggedIn;
   };
@@ -46,7 +69,6 @@ export class CustomerClassCardsComponent implements OnInit {
   };
 
   onCancelClick(class1) {
-    console.log("kører Cancel");
     this.classService.cancelClass(class1.classID, this.authService.currentUser.customerID).subscribe(res => {
       console.log(res);
     });
